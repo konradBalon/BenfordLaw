@@ -1,0 +1,14 @@
+.nav-item {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+
+.nav-link {
+    color: #007bff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
