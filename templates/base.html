@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
     <!-- custom css-->
     <link rel="stylesheet" href="{% static 'styles/base.css' %}">
-    {# async, defer improves page loading time #}
-    <script src="{% static 'scripts/bootstrap.min.js' %}" async defer></script>
     <!--for dynamic tooggle menu on mobile devices-->
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    {# async, defer improves page loading time #}
+    <script src="{% static 'scripts/bootstrap.min.js' %}" async defer></script>
+
     <!--custom js-->
     <script src="{% static 'scripts/base.js' %}"></script>
     {% block scripts %}
@@ -45,6 +46,11 @@
             </li>
                   <li class="nav-item active">
                 <a class="nav-link text-success" href="{% url 'benny:files' %}">YOUR FILES </a>
+            </li>
+
+                        </li>
+                  <li class="nav-item active">
+                <a class="nav-link text-success" href="{% url 'benny:test_law' %}">TEST BENFORD LAW </a>
             </li>
         </ul>
 

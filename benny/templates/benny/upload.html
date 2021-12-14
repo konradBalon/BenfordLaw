@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block title %} Upload a file{% endblock %}
+{% block title %} Upload a file {% endblock %}
 
 
 {% block content %}
@@ -11,20 +11,11 @@
     {#   {% crispy form %}#}
 
 
+    {% include "benny/uploadForm.html" %}
 
 
-    <form method="post" enctype="multipart/form-data">
 
 
-        {% csrf_token %}
-        {% load crispy_forms_tags %}
-        {% crispy form %}
-
-        <button type="submit">Upload</button>
-
-    </form>
-
-    <p><a href="{% url 'benny:index' %}">Return to home</a></p>
 
 
 

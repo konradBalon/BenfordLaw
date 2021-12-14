@@ -27,9 +27,8 @@ def upload_file(request):
 
 def files(request):
     ctx = Document.objects.all()
-    return render(request, 'benny/index.html', {"context": ctx})
+    return render(request, 'benny/files.html', {"files": ctx})
 
-def testLaw(request):
-    path = FilePathField.path
-    print(path)
-    return HTTPResponse("ok")
+
+def test_law(request):
+    return render(request, 'benny/TestTheLaw.html')
