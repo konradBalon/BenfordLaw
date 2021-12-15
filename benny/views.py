@@ -1,7 +1,10 @@
 from http.client import HTTPResponse
 
+from django.core.exceptions import ValidationError
 from django.db.models import FilePathField
 from django.shortcuts import render, redirect
+from django.views import View
+
 from .forms import DocumentForm
 
 # Create your views here.
@@ -18,8 +21,12 @@ def upload_file(request):
         if form.is_valid():
             form.save()
             # return redirect('home')
+        print(form.errors)
+
+
     else:
         form = DocumentForm()
+
     return render(request, 'benny/upload.html', {
         'form': form
     })
@@ -30,5 +37,12 @@ def files(request):
     return render(request, 'benny/files.html', {"files": ctx})
 
 
-def test_law(request):
-    return render(request, 'benny/TestTheLaw.html')
+class PickerView(View):
+
+    def get(self, request):
+        uploaded_files = Document.objects.all()
+        return render(request, 'benny/TestTheLaw.html', {'files': uploaded_files})
+
+    def post(self, request):
+        selected_file = request.POST.get('selected_file')
+        print(selected_file)
