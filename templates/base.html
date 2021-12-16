@@ -51,7 +51,7 @@
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-success" href="{% url 'benny:upload_file' %}">UPLOAD FILE </a>
+                <a class="nav-link text-success" href="{% url 'benny:upload-file' %}">UPLOAD FILE </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-success" href="{% url 'benny:files' %}">YOUR FILES </a>
@@ -59,7 +59,11 @@
 
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-success" href="{% url 'benny:test_law' %}">TEST BENFORD LAW </a>
+                <a class="nav-link text-success" href="{% url 'benny:pick-file' %}">PICK FILE </a>
+            </li>
+
+                 <li class="nav-item active">
+                <a class="nav-link text-success" href="{% url 'benny:handle-file' document=123 %}">HANDLE FILE </a>
             </li>
         </ul>
 

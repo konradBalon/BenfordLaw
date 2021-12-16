@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{{ document.id }}
+{{ document.uploaded_at }}
+   {% for atr in document.document %}
+
+       {{ atr}} <br>
+
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

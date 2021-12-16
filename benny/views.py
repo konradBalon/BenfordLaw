@@ -46,3 +46,14 @@ class PickerView(View):
     def post(self, request):
         selected_file = request.POST.get('selected_file')
         print(selected_file)
+        return redirect('benny:handle-file', document=selected_file.split('/')[1])
+
+
+class HandleFileView(View):
+
+    def get(self, request, document):
+        #         load file
+        document = Document.objects.filter(document=f'documents/{document}').first()
+        print(document.document)
+        return render(request, 'benny/handle-file.html', {'document': document})
+
