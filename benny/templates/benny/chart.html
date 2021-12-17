@@ -1,0 +1,45 @@
+<div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+
+    var config = {
+        type: 'line',
+        data: {
+            datasets: [{
+                data: {{ benford_data|safe }},
+                borderColor: '#009621FF',
+
+                label: 'Benford Law Numbers'
+            },
+                {
+                    data: {{ file_data|safe }},
+                    fill: false,
+                    borderColor: '#A52828FF',
+                    backgroundColor: [
+                        '#A52828FF', '#ffffff', '#A9A9A9', '#a52828', '#D3D3D3'
+                    ],
+                    label: 'Your file'
+
+                }
+
+
+            ],
+
+
+            labels: {{ labels|safe }}
+        },
+        options: {
+            responsive: true
+        }
+    };
+
+    window.onload = function () {
+        var ctx = document.getElementById('pie-chart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+    };
+
+</script>
