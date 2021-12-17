@@ -7,28 +7,8 @@
 
 {% block content %}
 
-    {% if context %}
-        <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Filename</th>
-            <th scope="col">Uploaded</th>
-            <th scope="col">Descritpion</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for doc in context %}
-
-            <tr>
-                <td>{{ doc.id }}</td>
-                <td>{{ doc.document }}</td>
-                <td>{{ doc.uploaded_at }}</td>
-            </tr>
 
 
-
-        {% endfor %}
-    {% endif %}
+    <div class="bg"></div>
 
 {% endblock %}

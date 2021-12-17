@@ -4,33 +4,37 @@
 <form method="post" id="picker_form">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+         aria-hidden="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Selecting file</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Selecting header</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body ">
+                <div class="modal-body">
 
 
                     <div class="dropdown m-auto">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select file
+                            Select header
                         </button>
-                        <div class="dropdown-menu" id="filelist" aria-labelledby="dropdownMenuButton">
-                            {% for file in files %}
-                                <a class="dropdown-item" href="#">{{ file.document }}</a>
+                        <div class="dropdown-menu" id="header-list" aria-labelledby="dropdownMenuButton">
+                            {% for header in headers %}
+                                <a class="dropdown-item" href="#">{{ header }}</a>
                             {% endfor %}
                         </div>
+                    <div class="table table-primary my-3">
+                          {{ preview|safe }}
+                    </div>
+
 
                     </div>
                     <div class="form-group my-3">
-                        <input type="text" class="form-control" id="selectedfile" placeholder="no file selected"
-                               name="selected_file"  required>
+                        <input type="text" class="form-control" id="selected-header" placeholder="no header selected"
+                               name="selected_header" value="" required>
                     </div>
                     {% csrf_token %}
 
@@ -38,7 +42,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">next</button>
+                    <button type="submit" class="btn btn-success">Start</button>
                 </div>
             </div>
         </div>

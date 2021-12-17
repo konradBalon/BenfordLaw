@@ -6,12 +6,18 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('#header-list a').on('click', function () {
+        let txt = ($(this).text());
+        document.getElementById('selected-header').value = txt;
 
-$('#upload_form').submit(function (e) {
-    $('#messages').removeClass('hide').addClass('alert alert-success alert-dismissible').slideDown().show();
-    $('#messages_content').html('<h4>MESSAGE HERE</h4>');
-    $('#modal').modal('show');
-    e.preventDefault();
+    });
 });
+
+
+$(document).ready(function () {
+    $("#exampleModal").modal('show');
+});
+
 
 
