@@ -22,7 +22,7 @@ def upload_file(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            # return redirect('home')
+            return redirect('benny:index')
         print(form.errors)
 
 
