@@ -10,6 +10,7 @@
 
 
 **Docker installation:**
-<code>git@github.com:konradBalon/BenfordLaw.git</code> <br>
+
+<code>git clone git@github.com:konradBalon/BenfordLaw.git</code> <br>
 <code>docker build -t benford_law:1  .</code><br>
 <code> docker-compose up </code>
