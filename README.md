@@ -2,14 +2,14 @@
 
 **Django app installation:**
 
-python -m venv venv
-source venv/bin activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+<code> python -m venv venv </code><br>
+<code> source venv/bin activate </code><br>
+<code> pip install -r requirements.txt </code><br>
+<code> python manage.py migrate </code><br>
+<code> python manage.py runserver</code><br>
 
 
 **Docker installation:**
 
-docker build -t benford_law:1 .
-docker-compose up
+<code>docker build -t benford_law:1  .</code><br>
+<code> docker-compose up </code>
