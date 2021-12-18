@@ -16,22 +16,22 @@
                 <div class="modal-body ">
 
 
-                    <div class="dropdown m-auto">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select file
-                        </button>
-                        <div class="dropdown-menu" id="filelist" aria-labelledby="dropdownMenuButton">
-                            {% for file in files %}
-                                <a class="dropdown-item" href="#">{{ file.document }}</a>
-                            {% endfor %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Files</label>
                         </div>
+                        <select class="custom-select" id="selected_file" name="selected_file" required>
+                          <option value="">Choose...</option>
 
+                            {% for file in files %}
+                                <option value={{ file.document }}>{{ file.document }}</option>
+                            {% endfor %}
+
+
+                        </select>
                     </div>
-                    <div class="form-group my-3">
-                        <input type="text" class="form-control" id="selectedfile" placeholder="no file selected"
-                               name="selected_file"  required>
-                    </div>
+
+
                     {% csrf_token %}
 
 
